@@ -21,10 +21,10 @@ li {
   --lato: "Lato", sans-serif;
 
   --light: #f9f9f9;
-  --blue: #3c91e6;
+  --blue: #2A5C82;
   --light-blue: #cfe8ff;
   --grey: #eee;
-  --dark-grey: #aaaaaa;
+  --dark-grey: #5DA399;
   --dark: #342e37;
   --red: #db504a;
   --yellow: #ffce26;
@@ -585,3 +585,64 @@ body {
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+/* Ajoutez ces styles à la fin de votre fichier CSS */
+
+/* Correction des textes de progression */
+.satisfaction-details .progress-bar {
+  position: relative;
+  margin-top: 35px; /* Espace pour le texte */
+  margin-bottom: 25px;
+}
+
+.progress-bar span {
+  position: absolute;
+  top: -25px;
+  left: 0;
+  font-family: var(--poppins);
+  font-weight: 500;
+  color: var(--dark);
+  z-index: 2;
+  background: rgba(255,255,255,0.9);
+  padding: 2px 8px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Surcharge des styles Material */
+.mat-mdc-menu-panel {
+  font-family: var(--poppins) !important;
+}
+
+.mdc-list-item__primary-text {
+  color: var(--dark) !important;
+}
+
+/* Correction de l'empilement */
+.satisfaction .gauge-container {
+  z-index: 1;
+  position: relative;
+}
+
+/* Assurance de la visibilité */
+.satisfaction-details .detail-item {
+  min-height: 60px;
+  overflow: visible !important;
+}
+
+/* Adaptation aux couleurs du thème */
+.progress-bar::before {
+  background: var(--blue) !important;
+}
+
+.gauge {
+  background: 
+      radial-gradient(transparent 40%, var(--light) 41%),
+      conic-gradient(
+          var(--blue) 0 calc(var(--percentage) * 1%),
+          var(--grey) calc(var(--percentage) * 1%) 100%
+      ) !important;
+}
+
+.score {
+  color: var(--blue) !important;
+}

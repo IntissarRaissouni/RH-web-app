@@ -1,44 +1,168 @@
 <!-- MAIN -->
-  <main>
-    <div class="head-title">
-      <div class="left">
-        <h1>Dashboard</h1>
-        <ul class="breadcrumb">
-          <li>
-            <a href="#">Dashboard</a>
-          </li>
-          <li><i class='bx bx-chevron-right' ></i></li>
-          <li>
-            <a class="active" href="#">Home</a>
-          </li>
-        </ul>
+<div class="main">
+  <div class="head-title">
+    <div class="left">
+      <h1>Dashboard</h1>
+      <ul class="breadcrumb">
+        <li><a href="#">Analytics</a></li>
+        <li><i class='bx bx-chevron-right'></i></li>
+        <li><a class="active" href="#">Real-time Overview</a></li>
+      </ul>
+    </div>
+    <div class="date-picker">
+      <input type="date" class="custom-date">
+    </div>
+  </div>
+
+  <div class="metrics-grid">
+    <!-- Carte Statistiques Rapides -->
+    <div class="metric-card trend-up">
+      <div class="metric-header">
+        <i class='bx bx-line-chart'></i>
+        <h3>Attendance Trend</h3>
+      </div>
+      <div class="metric-content">
+        <svg class="sparkline" viewBox="0 0 100 40">
+          <path d="M0,35 L20,25 L40,15 L60,30 L80,10 L100,20" />
+        </svg>
+        <div class="metric-value">
+          <span class="current">94.6%</span>
+          <span class="diff positive">+2.4%</span>
+        </div>
       </div>
     </div>
 
-    <ul class="box-info">
-      <li>
-        <i class='bx bxs-calendar-check' ></i>
-        <span class="text">
-          <h3>20</h3>
-          <p>Projects</p>
-        </span>
-      </li>
-      <li>
-        <i class='bx bxs-group' ></i>
-        <span class="text">
-          <h3>5</h3>
-          <p>Employees</p>
-        </span>
-      </li>
-      <li>
-        <i class='bx bxs-dollar-circle' ></i>
-        <span class="text">
-          <h3>$2543</h3>
-          <p>Company worth</p>
-        </span>
-      </li>
-    </ul>
+    <!-- Graphique Circulaire -->
+    <div class="metric-card pie-chart">
+      <div class="metric-header">
+        <i class='bx bx-pie-chart-alt-2'></i>
+        <h3>Request Distribution</h3>
+      </div>
+      <div class="chart-container">
+        <div class="pie" style="--percentage: 65%">
+          <span>65% Leaves</span>
+        </div>
+        <div class="legend">
+          <div class="legend-item"><span class="color-leaves"></span>Leaves</div>
+          <div class="legend-item"><span class="color-resign"></span>Resignations</div>
+        </div>
+      </div>
+    </div>
 
+    <!-- Tableau des Dernières Activités -->
+    <div class="metric-card wide-card">
+      <div class="metric-header">
+        <i class='bx bx-table'></i>
+        <h3>Recent Activities</h3>
+      </div>
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Employee</th>
+            <th>Department</th>
+            <th>Status</th>
+            <th>Last Update</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>John Doe</td>
+            <td>Engineering</td>
+            <td><span class="status active">Active</span></td>
+            <td>2h ago</td>
+          </tr>
+          <tr>
+            <td>Jane Smith</td>
+            <td>HR</td>
+            <td><span class="status pending">Pending</span></td>
+            <td>4h ago</td>
+          </tr>
+          <tr>
+            <td>Mike Johnson</td>
+            <td>Marketing</td>
+            <td><span class="status completed">Completed</span></td>
+            <td>1d ago</td>
+          </tr>
+          <tr>
+            <td>Sarah Wilson</td>
+            <td>Sales</td>
+            <td><span class="status active">Active</span></td>
+            <td>3h ago</td>
+          </tr>
+          <tr>
+            <td>Alex Turner</td>
+            <td>Support</td>
+            <td><span class="status on-hold">On Hold</span></td>
+            <td>6h ago</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
-  </main>
-  <!-- MAIN -->
+    <!-- Graphique Comparatif -->
+    <div class="metric-card bar-chart">
+      <div class="metric-header">
+        <i class='bx bx-bar-chart-alt-2'></i>
+        <h3>Department Comparison</h3>
+      </div>
+      <div class="chart-container">
+        <div class="bars">
+          <div class="bar" style="--height: 70%"><span>70%</span></div>
+          <div class="bar" style="--height: 45%"><span>45%</span></div>
+          <div class="bar" style="--height: 60%"><span>60%</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ajoutez cette carte dans metrics-grid -->
+    <!-- HTML (update satisfaction card only) -->
+    <!-- HTML Update -->
+<div class="metric-card satisfaction">
+  <div class="metric-header">
+    <i class='bx bx-user-check'></i>
+    <h3>Employee Satisfaction</h3>
+    <div class="time-period">Current Quarter</div>
+  </div>
+  <div class="satisfaction-content">
+    <div class="gauge-container">
+      <div class="gauge" style="--percentage: 82%">
+        <div class="gauge-inner">
+          <span class="score">82%</span>
+          <div class="gauge-label">Overall Score</div>
+        </div>
+      </div>
+      <div class="comparison">
+        <div class="comparison-item positive">
+          <i class='bx bx-trending-up'></i>
+          <span>+3.2% from last quarter</span>
+        </div>
+      </div>
+    </div>
+    <div class="breakdown">
+      <div class="breakdown-item">
+        <div class="metric-info">
+          <span class="label">Work Environment</span>
+          <span class="value">89%</span>
+        </div>
+        <div class="progress-bar" style="--progress: 89%"></div>
+      </div>
+      <div class="breakdown-item">
+        <div class="metric-info">
+          <span class="label">Career Growth</span>
+          <span class="value">76%</span>
+        </div>
+        <div class="progress-bar" style="--progress: 76%"></div>
+      </div>
+      <div class="breakdown-item">
+        <div class="metric-info">
+          <span class="label">Work/Life Balance</span>
+          <span class="value">84%</span>
+        </div>
+        <div class="progress-bar" style="--progress: 84%"></div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+<!-- MAIN -->
