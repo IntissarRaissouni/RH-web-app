@@ -1,47 +1,93 @@
-<!-- login.component.html -->
-<div class="login">
-  <div class="login-box">
-    <div class="brand-logo"></div>
-    <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input
-          type="email"
-          class="form-control"
-          id="email"
-          formControlName="email"
-          placeholder="Enter your email"
-          required
-        />
-        <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
-          <small class="error-message" *ngIf="loginForm.get('email')?.hasError('required')">Email is required</small>
-          <small class="error-message" *ngIf="loginForm.get('email')?.hasError('email')">Invalid email format</small>
-        </div>
+<div class="login-container">
+  <!-- Partie Branding (20%) -->
+  <div class="brand-section">
+    <div class="brand-content">
+      <img src="../../assets/connect.png" 
+           class="brand-logo" 
+           alt="HR Management Logo">
+      <div class="brand-text">
+        <h1 class="brand-title">HR Management Pro</h1>
+        <p class="brand-subtitle">Employee Portal 2.0</p>
       </div>
+    </div>
+  </div>
 
-      <div class="form-group">
-        <label for="password">Password</label>
-        <input
-          type="password"
-          class="form-control"
-          id="password"
-          formControlName="password"
-          placeholder="Enter your password"
-          required
-        />
-        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
-          <small class="error-message" *ngIf="loginForm.get('password')?.hasError('required')">Password is required</small>
+  <!-- Partie Formulaire (80%) -->
+  <div class="form-section">
+    <div class="login-card">
+      <h2 class="form-title">Secure Access</h2>
+      
+      <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
+        <!-- Email Field -->
+        <div class="form-group">
+          <label for="email" class="input-label">Corporate Email</label>
+          <div class="input-wrapper">
+            <input type="email" 
+                   class="form-input"
+                   id="email"
+                   formControlName="email"
+                   placeholder="name@company.com">
+            <svg class="input-icon" viewBox="0 0 24 24">
+              <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 14H4V8l8 5 8-5v10zm-8-7L4 6h16l-8 5z"/>
+            </svg>
+          </div>
+          <div class="validation-errors">
+            <small *ngIf="loginForm.get('email')?.errors?.['required'] && loginForm.get('email')?.touched">
+              <span class="error-icon">!</span>Email is required
+            </small>
+            <small *ngIf="loginForm.get('email')?.errors?.['email'] && loginForm.get('email')?.touched">
+              <span class="error-icon">!</span>Please enter a valid email
+            </small>
+          </div>
         </div>
-        <p class="fp">Forget password?</p>
-      </div>
 
-      <button
-        type="submit"
-        class="btn btn-primary"
-        [disabled]="loginForm.invalid"
-      >
-        Login
-      </button>
-    </form>
+        <!-- Password Field -->
+        <div class="form-group">
+          <label for="password" class="input-label">Password</label>
+          <div class="input-wrapper">
+            <input [type]="showPassword ? 'text' : 'password'"
+                   class="form-input"
+                   id="password"
+                   formControlName="password"
+                   placeholder="••••••••">
+            <svg class="input-icon" viewBox="0 0 24 24">
+              <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/>
+            </svg>
+            <button type="button" 
+                    class="password-toggle"
+                    (click)="togglePasswordVisibility()">
+              <svg viewBox="0 0 24 24" width="20" height="20">
+                <path fill="currentColor" [attr.d]="showPassword ? eyeOffIcon : eyeIcon"/>
+              </svg>
+            </button>
+          </div>
+          <div class="validation-errors">
+            <small *ngIf="loginForm.get('password')?.errors?.['required'] && loginForm.get('password')?.touched">
+              <span class="error-icon">!</span>Password is required
+            </small>
+          </div>
+        </div>
+
+        <!-- Options -->
+        <div class="form-options">
+          <label class="remember-me">
+            <input type="checkbox" 
+                   formControlName="rememberMe"
+                   class="hidden-checkbox">
+            <span class="custom-checkbox"></span>
+            <span class="option-text">Remember credentials</span>
+          </label>
+          <a class="forgot-password">Need assistance?</a>
+        </div>
+
+        <!-- Submit Button -->
+        <button type="submit" 
+                class="login-button"
+                [disabled]="loginForm.invalid">
+          <span class="button-text">Secure Login</span>
+          <span class="button-loader" *ngIf="loading"></span>
+        </button>
+      </form>
+    </div>
   </div>
 </div>
