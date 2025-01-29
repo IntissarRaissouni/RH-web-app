@@ -1,46 +1,51 @@
-<!-- login.component.html -->
-<div class="login">
-  <div class="login-box">
-    <div class="brand-logo"></div>
+<!-- Updated login.component.html -->
+<div class="login-container">
+  <div class="login-card">
+    <div class="brand-header">
+      <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" class="brand-logo" alt="Company Logo">
+      <h2 class="brand-title">Company Portal</h2>
+    </div>
     <form [formGroup]="loginForm" (ngSubmit)="submitForm()">
       <div class="form-group">
-        <label for="email">Email</label>
+        <label for="email" class="input-label">Email Address</label>
         <input
           type="email"
-          class="form-control"
+          class="form-input"
           id="email"
           formControlName="email"
-          placeholder="Enter your email"
+          placeholder="name@company.com"
           required
         />
-        <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
-          <small class="error-message" *ngIf="loginForm.get('email')?.hasError('required')">Email is required</small>
-          <small class="error-message" *ngIf="loginForm.get('email')?.hasError('email')">Invalid email format</small>
+        <div class="validation-errors">
+          <small *ngIf="loginForm.get('email')?.hasError('required') && loginForm.get('email')?.touched">Email is required</small>
+          <small *ngIf="loginForm.get('email')?.hasError('email') && loginForm.get('email')?.touched">Please enter a valid email</small>
         </div>
       </div>
 
       <div class="form-group">
-        <label for="password">Password</label>
+        <div class="password-header">
+          <label for="password" class="input-label">Password</label>
+          <a class="forgot-password">Forgot password?</a>
+        </div>
         <input
           type="password"
-          class="form-control"
+          class="form-input"
           id="password"
           formControlName="password"
-          placeholder="Enter your password"
+          placeholder="••••••••"
           required
         />
-        <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
-          <small class="error-message" *ngIf="loginForm.get('password')?.hasError('required')">Password is required</small>
+        <div class="validation-errors">
+          <small *ngIf="loginForm.get('password')?.hasError('required') && loginForm.get('password')?.touched">Password is required</small>
         </div>
-        <p class="fp">Forget password?</p>
       </div>
 
       <button
         type="submit"
-        class="btn btn-primary"
+        class="login-button"
         [disabled]="loginForm.invalid"
       >
-        Login
+        Sign In
       </button>
     </form>
   </div>
