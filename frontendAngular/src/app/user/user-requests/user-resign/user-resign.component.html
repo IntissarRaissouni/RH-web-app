@@ -1,0 +1,53 @@
+<main>
+  <div class="head-title">
+    <div class="left">
+      <h1>Resignation</h1>
+      <ul class="breadcrumb">
+        <li>
+          <a href="#">requests</a>
+        </li>
+        <li><i class="bx bx-chevron-right"></i></li>
+        <li>
+          <a class="active" href="#">resign</a>
+        </li>
+      </ul>
+    </div>
+    <a [routerLink]="['/employee', employeeId,'requests','resign', 'my-resign']" class="btn-download">
+      <i class="bx bxs-cloud-download"></i>
+      <span class="text">My Resign</span>
+    </a>
+  </div>
+  <div class="table-data">
+    <div class="order">
+      <div class="head">
+        <form [formGroup]="resigning" (ngSubmit)="Resign()" class="ml-8 row">
+          <div class="mb-3 form-group col-md-5">
+            <label for="request_date" class="form-label">Request Date</label>
+            <input type="date" class="form-control" id="request_date"
+            formControlName="request_date"
+            [value]="todayDate | date:'yyyy-MM-dd'"
+            />
+          </div>
+          <div class="mb-3 form-group col-md-5">
+            <label for="resign_date" class="form-label">Resign Date</label>
+            <input type="date" class="form-control" id="resign_date" 
+            formControlName="resign_date"
+            />
+          </div>
+          <div class="mb-3 form-group col-md-5">
+            <label for="reason" class="form-label">Resign Reason</label>
+            <textarea
+              id="reason"
+              cols="108"
+              placeholder="Your Resign Reasons"
+              formControlName="reason"
+            ></textarea>
+          </div>
+          <div class="mb-3 form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>

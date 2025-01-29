@@ -1,0 +1,41 @@
+<main>
+  <div class="head-title">
+    <div class="left">
+      <h1>Leaves</h1>
+    </div>
+  </div>
+  <div class="table-data">
+    <div class="order">
+      <div class="head">
+        <h3>My Leaves</h3>
+        <i class="bx bx-filter"></i>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Start date</th>
+            <th>End date</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let leave of leaves">
+            <td>{{leave.startDate.split('T')[0]}}</td>
+            <td>{{leave.endDate.split('T')[0]}}</td>
+            <td [ngClass]="{'green-text': leave.state === 'accepted', 
+            'red-text': leave.state !== 'accepted'}">{{ leave.state }}
+            </td>
+            <td>
+              <a class="delete big-red-icon">
+                <i 
+                (click)="delete(leave.id)" 
+                class="bx bxs-trash"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>

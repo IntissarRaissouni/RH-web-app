@@ -1,0 +1,34 @@
+<main>
+  <div class="head-title">
+    <div class="left">
+      <h1>Claims</h1>
+    </div>
+  </div>
+  <div class="table-data">
+    <div class="order">
+      <div class="head">
+        <h3>My claims</h3>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th class="col-md-11">Claim</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let claim of claims">
+            <td>{{claim.reclamation}}</td>
+            <td>
+              <a class="delete big-red-icon">
+                <i 
+                (click)="delete(claim.id)" 
+                class="bx bxs-trash"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>

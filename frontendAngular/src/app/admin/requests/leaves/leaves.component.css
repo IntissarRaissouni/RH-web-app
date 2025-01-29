@@ -1,0 +1,16 @@
+.action-buttons a {
+  font-size: 24px;
+  margin-right: 10px;
+  color: #333;
+  text-decoration: none;
+}
+
+.action-buttons .approve {
+  color: #16be6a;
+  cursor: pointer;
+}
+.action-buttons .reject{
+    color: red;
+  cursor: pointer;
+
+}

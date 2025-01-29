@@ -1,0 +1,62 @@
+<!-- MAIN -->
+<main>
+  <div class="head-title">
+    <div class="left">
+      <h1>Departments</h1>
+      <ul class="breadcrumb">
+        <li>
+          <a href="#">Departments</a>
+        </li>
+        <li><i class="bx bx-chevron-right"></i></li>
+        <li>
+          <a class="active" href="#">Add</a>
+        </li>
+      </ul>
+    </div>
+    <a
+      [routerLink]="['/admin', adminId, 'show-departments']"
+      class="btn-download"
+    >
+      <i class='bx bxs-show'></i>
+      <span class="text">Show Departments</span>
+    </a>
+  </div>
+
+  <div class="table-data">
+    <div class="order">
+      <div class="head">
+        <h3>Add Department</h3>
+      </div>
+      <form [formGroup]="departForm" (ngSubmit)="onSubmit()">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <label for="departName">Department Name</label>
+            <input
+              type="text"
+              class="form-control mt-3"
+              id="departName"
+              placeholder="Enter department name"
+              formControlName="departName"
+              required
+            />
+          </div>
+          <div class="col-md-6 mb-3">
+            <label for="departDetails">Department Details</label>
+            <textarea
+              class="form-control mt-3"
+              name="departDetails"
+              id="departDetails"
+              cols="64"
+              rows="1"
+              formControlName="departDetails"
+              placeholder="Enter department details"
+              required
+            ></textarea>
+          </div>
+        </div>
+        <button class="btn btn-primary d-flex m-auto" type="submit">Add</button>
+      </form>
+    </div>
+  </div>
+</main>
+<!-- MAIN -->

@@ -1,0 +1,30 @@
+version: '3'
+
+services:
+  backend:
+    build:
+      context: ./backendSpringBoot
+      dockerfile: Dockerfile
+    ports:
+      - "8087:8087"
+    depends_on:
+      - mongodb
+    environment:
+      SPRING_DATA_MONGODB_URI: mongodb+srv://youssef1551:mybdyoussef@cluster00.qbh5tss.mongodb.net/
+      SPRING_DATA_MONGODB_DATABASE: HRMS
+
+  frontend:
+    build:
+      context: ./frontendAngular
+      dockerfile: Dockerfile
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+
+  mongodb:
+    image: mongo:latest
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: youssef1551
+      MONGO_INITDB_ROOT_PASSWORD: mybdyoussef
+      MONGO_INITDB_DATABASE: HRMS

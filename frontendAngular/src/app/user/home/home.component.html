@@ -1,0 +1,76 @@
+<!-- SIDEBAR -->
+<section id="sidebar">
+  <a class="brand mt-2 m-2">
+    <img src="../../../assets/connect.png" alt="brand">
+  </a>
+  <ul class="side-menu top">
+    <li [routerLinkActive]="'active'">
+      <a [routerLink]="['/employee', employeeId, 'homepage']">
+        <i class="bx bxs-dashboard"></i>
+        <span class="text">Home</span>
+      </a>
+    </li>
+    <li class="dropdown" (click)="toggleAttendanceDropdown()">
+      <a>
+        <i class="bx bx-clipboard"></i>
+        <span class="text">Attendance</span>
+        <i class="bx bx-caret-down"></i>
+      </a>
+      <ul class="submenu" *ngIf="isAttendanceDropdownOpen">
+        <li>
+          <a [routerLink]="['/employee', employeeId, 'checkin']">
+            <span class="nav-text">CheckIn</span>
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['/employee', employeeId, 'checkout']">
+            <span class="nav-text">CheckOut</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li class="dropdown" (click)="toggleRequestsDropdown()">
+      <a>
+        <i class="bx bx-news"></i>
+        <span class="text">Requests</span>
+        <i class="bx bx-caret-down"></i>
+      </a>
+      <ul class="submenu" *ngIf="isRequestsDropdownOpen">
+        <li>
+          <a [routerLink]="['/employee', employeeId, 'requests','leave']">
+            <span class="nav-text">Leave</span>
+          </a>
+        </li>
+        <li>
+          <a [routerLink]="['/employee', employeeId, 'requests','resign']">
+            <span class="nav-text">Resign</span>
+          </a>
+        </li>
+      </ul>
+    </li>
+    <li [routerLinkActive]="'active'">
+      <a [routerLink]="['/employee', employeeId, 'claims']">
+        <i class="bx bxs-doughnut-chart"></i>
+        <span class="text">Claims</span>
+      </a>
+    </li>
+    <li [routerLinkActive]="'active'">
+      <a [routerLink]="['/employee', employeeId, 'payroll']">
+        <i class="bx bxs-wallet-alt"></i>
+        <span class="text">Payroll</span>
+      </a>
+    </li>
+  </ul>
+  <ul class="side-menu">
+    <li>
+      
+    </li>
+    <li (click)="logout()">
+      <a class="logout">
+        <i class="bx bxs-log-out-circle"></i>
+        <span class="text" >Logout</span>
+      </a>
+    </li>
+  </ul>
+</section>
+<!-- SIDEBAR -->

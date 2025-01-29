@@ -1,0 +1,53 @@
+<main>
+  <div class="head-title">
+    <div class="left">
+      <h1>Resignations</h1>
+      <ul class="breadcrumb">
+        <li>
+          <a href="#">Requests</a>
+        </li>
+        <li><i class="bx bx-chevron-right"></i></li>
+        <li>
+          <a class="active" href="#">Resignations</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="table-data">
+    <div class="order">
+      <div class="head">
+        <h3>Resign Requests</h3>
+        <i class="bx bx-filter"></i>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Employee</th>
+            <th>Request date</th>
+            <th>Resign date</th>
+            <th>Reason</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let request of requests|keyvalue">
+            <td>{{ request.key }}</td>
+            <td>{{ request.value.request_date.split('T')[0] }}</td>
+            <td>{{ request.value.resign_date.split('T')[0] }}</td>
+            <td>{{ request.value.reason }}</td>
+            <td>
+              <div class="action-buttons">
+                <a class="approve" (click)="approveRequest(request.value.id)">
+                  <i class='bx bxs-check-circle'></i>
+                </a>
+                <a class="reject" (click)="rejectRequest(request.value.id)">
+                  <i class='bx bxs-x-circle'></i>
+                </a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>

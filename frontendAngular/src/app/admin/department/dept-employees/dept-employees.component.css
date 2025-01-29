@@ -1,0 +1,90 @@
+.employee-cards {
+  display: flex;
+  justify-content: center;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Adjust the gap between cards as needed */
+}
+
+.employee-card {
+  width: 500px;
+  height: 180px;
+  display: flex;
+  border: 1px solid #ccc; /* Add border for card styling */
+  border-radius: 8px;
+  overflow: hidden;
+  position: relative; /* Add position relative for absolute positioning of buttons and status circle */
+}
+
+.employee-photo {
+  width: 150px; /* Adjust the width as needed */
+  height: 100%; /* Take full height of the card */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  border-radius: 8px 0 0 8px; /* Rounded corners on the left side */
+}
+
+.employee-details {
+  padding: 20px;
+  flex-grow: 1;
+}
+
+.employee-name {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.employee-position {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.employee-info {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.employee-address {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.employee-actions {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+}
+
+.btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-right: 5px;
+}
+.status-circle {
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 10px; /* Adjust the top and right spacing as needed */
+  border: 2px solid #fff; /* White border for contrast */
+}
+
+.status-circle.active {
+  background-color: #4caf50; /* Green color for active status */
+}
+
+.status-circle.inactive {
+  background-color: #ff9800; /* Orange color for inactive status */
+}

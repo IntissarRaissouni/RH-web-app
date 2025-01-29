@@ -1,0 +1,40 @@
+<main>
+  <div class="head-title">
+    <div class="left">
+      <h1>Attendance</h1>
+      <ul class="breadcrumb">
+        <li>
+          <a href="#">Attendance</a>
+        </li>
+        <li><i class="bx bx-chevron-right"></i></li>
+        <li>
+          <a class="active" href="#">All</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="table-data">
+    <div class="order">
+      <div class="head">
+        <h3>Attendances</h3>
+        <i class="bx bx-filter"></i>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Employee</th>
+            <th>Date</th>
+            <th>Time</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let attendance of attandences|keyvalue">
+            <td>{{attendance.key}}</td>
+            <td>{{attendance.value.split('T')[0]}}</td>
+            <td>{{attendance.value.split('T')[1]}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>

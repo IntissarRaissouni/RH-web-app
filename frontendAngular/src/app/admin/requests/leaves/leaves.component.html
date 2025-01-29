@@ -1,0 +1,51 @@
+<main>
+  <div class="head-title">
+    <div class="left">
+      <h1>Leaves</h1>
+      <ul class="breadcrumb">
+        <li>
+          <a href="#">requests</a>
+        </li>
+        <li><i class="bx bx-chevron-right"></i></li>
+        <li>
+          <a class="active" href="#">leaves</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="table-data">
+    <div class="order">
+      <div class="head">
+        <h3>Leaves Requests</h3>
+        <i class="bx bx-filter"></i>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Employee</th>
+            <th>Start date</th>
+            <th>End date</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let leave of leaves|keyvalue">
+            <td>{{ leave.key }}</td>
+            <td>{{ leave.value.startDate.split('T')[0] }}</td>
+            <td>{{ leave.value.endDate.split('T')[0] }}</td>
+            <td>
+              <div class="action-buttons">
+                <a class="approve" (click)="approveLeave(leave.value.id)">
+                  <i class='bx bxs-check-circle'></i>
+                </a>
+                <a class="reject" (click)="rejectLeave(leave.value.id)">
+                  <i class='bx bxs-x-circle'></i>
+                </a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,41 @@
+<main>
+  <div class="head-title">
+    <div class="left">
+      <h1>Resign</h1>
+    </div>
+  </div>
+  <div class="table-data">
+    <div class="order">
+      <div class="head">
+        <h3>My Resign</h3>
+        <i class="bx bx-filter"></i>
+      </div>
+      <table>
+        <thead>
+          <tr>
+            <th>Request date</th>
+            <th>Resign date</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let resign of resigns">
+            <td>{{resign.request_date.split('T')[0]}}</td>
+            <td>{{resign.resign_date.split('T')[0]}}</td>
+            <td [ngClass]="{'green-text': resign.state === 'accepted', 
+            'red-text': resign.state !== 'accepted'}">{{ resign.state }}
+            </td>
+            <td>
+              <a class="delete big-red-icon">
+                <i 
+                (click)="delete(resign.id)" 
+                class="bx bxs-trash"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</main>

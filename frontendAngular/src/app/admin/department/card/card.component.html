@@ -1,0 +1,11 @@
+<div class="container" [ngStyle]="{ 'background-color': color }">
+  <div class="wrapper">
+    <div class="banner-image"></div>
+    <h1>{{ name }}</h1>
+    <p>{{ details }}</p>
+  </div>
+  <div class="button-wrapper">
+    <button class="btn outline" (click)="view()">VIEW</button>
+    <button class="btn fill" (click)="delete()">DELETE</button>
+  </div>
+</div>

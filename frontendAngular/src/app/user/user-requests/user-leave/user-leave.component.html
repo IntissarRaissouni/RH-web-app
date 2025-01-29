@@ -1,0 +1,52 @@
+<main>
+  <div class="head-title">
+    <div class="left">
+      <h1>Leaves</h1>
+      <ul class="breadcrumb">
+        <li>
+          <a href="#">requests</a>
+        </li>
+        <li><i class="bx bx-chevron-right"></i></li>
+        <li>
+          <a class="active" href="#">leave</a>
+        </li>
+      </ul>
+    </div>
+    <a [routerLink]="['/employee', employeeId,'requests','leave', 'my-leaves']" class="btn-download">
+      <i class="bx bxs-cloud-download"></i>
+      <span class="text">My Leaves</span>
+    </a>
+  </div>
+  <div class="table-data">
+    <div class="order">
+      <div class="head">
+        <form class="ml-8 row" [formGroup]="leaveinfos" (ngSubmit)="askleave()">
+          <div class="mb-3 form-group col-md-5">
+            <label for="startDate" class="form-label">Start Date</label>
+            <input type="date" class="form-control" id="startDate"
+            formControlName="startDate"
+             />
+          </div>
+          <div class="mb-3 form-group col-md-5">
+            <label for="endDate" class="form-label">End Date</label>
+            <input type="date" class="form-control" id="endDate" 
+            formControlName="endDate"
+            />
+          </div>
+          <div class="mb-3 form-group col-md-5">
+            <label for="descrepsion" class="form-label">Description</label>
+            <textarea
+              id="descrepsion"
+              cols="108"
+              placeholder="Description"
+              formControlName="descrepsion"
+            ></textarea>
+          </div>
+          <div class="mb-3 form-group">
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,45 @@
+<main>
+  <div class="head-title">
+    <div class="left">
+      <h1>Claims</h1>
+      <ul class="breadcrumb">
+        <li>
+          <a href="#">claims</a>
+        </li>
+        <li><i class="bx bx-chevron-right"></i></li>
+        <li>
+          <a class="active" href="#">add</a>
+        </li>
+      </ul>
+    </div>
+    <a [routerLink]="['/employee', employeeId, 'my-claims']" class="btn-download">
+      <i class="bx bxs-cloud-download"></i>
+      <span class="text">My Claims</span>
+    </a>
+  </div>
+  <div class="table-data">
+    <div class="order">
+      <div class="head">
+        <h3>Claims</h3>
+      </div>
+      <form [formGroup]="claimsForm" (ngSubmit)="submit()" class="ml-8 row">
+        <div class="mb-3 form-group col-md-5">
+          <label
+            for="reclamation"
+            class="form-label"
+            >Problem</label
+          >
+          <textarea
+            id="reclamation"
+            cols="90"
+            formControlName="reclamation"
+            placeholder="Your Problem"
+          ></textarea>
+        </div>
+        <div class="mb-3 form-group">
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</main>

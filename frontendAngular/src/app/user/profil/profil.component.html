@@ -1,0 +1,34 @@
+<main>
+  <div class="head-title">
+    <div class="left">
+      <h1>Profile</h1>
+      <ul class="breadcrumb">
+        <li>
+          <a href="#">profile</a>
+        </li>
+        <li><i class="bx bx-chevron-right"></i></li>
+        <li>
+          <a class="active" href="#">edit</a>
+        </li>
+      </ul>
+    </div>
+    <a href="#" class="btn-download">
+      <i class="bx bxs-cloud-download"></i>
+      <span class="text">Download PDF</span>
+    </a>
+  </div>
+  <div class="table-data">
+    <div class="order">
+      <div class="head">
+      </div>
+      <div class="card-body">
+        <div class="d-flex justify-content-center align-items-center">
+          <app-editprofilimage></app-editprofilimage>
+        </div>
+      </div>
+      <div class="card-body">
+        <app-userinfo [employeeInfo]="info"></app-userinfo>
+      </div>
+    </div>
+  </div>
+</main>

@@ -1,0 +1,27 @@
+<main>
+  <div class="table-data">
+    <div class="order">
+      <div class="head">
+        <h3>Employees List</h3>
+      </div>
+      <div class="employee-cards">
+        <div class="card-container">
+          <div class="employee-card" *ngFor="let employee of employees">
+            <img class="employee-photo" src="../../../../assets/images/blank.png" alt="Employee Photo" />
+            <div class="employee-details">
+              <div class="employee-name">{{ employee.firstName + " " + employee.lastName }}</div>
+              <div class="employee-position">{{ employee.position }}</div>
+              <div class="employee-info">{{ employee.email }} | {{ employee.phoneNumber }}</div>
+              <div class="employee-address">{{ employee.address }}</div>
+              <div class="status-circle" [ngClass]="{'active': employee.active, 'inactive': !employee.active}"></div>
+              <div class="employee-actions">
+                <button class="btn btn-primary" (click)="openEditForm(employee._id, employee)"><i class='bx bxs-edit'></i></button>
+                <button class="btn btn-danger" (click)="deleteEmployee(employee._id)"><i class='bx bxs-trash'></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>

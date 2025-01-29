@@ -1,0 +1,32 @@
+<main>
+  <div class="head-title">
+    <div class="left">
+      <h1>CheckIn</h1>
+      <ul class="breadcrumb">
+        <li>
+          <a href="#">Attendance</a>
+        </li>
+        <li><i class="bx bx-chevron-right"></i></li>
+        <li>
+          <a class="active" href="#">checkin</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="table-data">
+    <div class="order">
+      <div class="head">
+        <h3>CheckIn</h3>
+      </div>
+      <form [formGroup]="checkin" (ngSubmit)="checkIn()">
+          <div class="mb-3">
+            <label for="time" class="form-label">CheckIn:</label>
+            <input type="datetime-local" class="form-control" id="time" formControlName="time" />
+          </div>
+          <div class="d-flex justify-content-center">
+            <button type="submit" class="add-project-sidebar btn btn-primary">Submit</button>
+          </div>
+        </form>
+    </div>
+  </div>
+</main>
