@@ -84,16 +84,17 @@ body {
 .metric-header {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 10px;
     margin-bottom: 20px;
 }
 
 .metric-header i {
-    font-size: 1.8rem;
+    font-size: 24px;
     color: #3498db;
 }
 
 .metric-header h3 {
+    margin: 0;
     font-size: 1.4rem;
     color: #2c3e50;
 }
@@ -210,21 +211,44 @@ body {
 }
 
 .status.pending {
-    background: #fef5e7;
-    color: #f39c12;
+    background: #f8bbbb;
+    color: #711919;
+}
+.status.on-hold {
+  background: #e8eaf6; /* Light indigo background */
+  color: #3f51b5; /* Dark indigo text */
+}
+
+.status.completed {
+  background: #fff3e0; /* Light amber background */
+  color: #ffa726; /* Dark amber text */
 }
 
 /* Graphique à barres */
+.metric-card.bar-chart {
+  background: #fff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
 .bar-chart .chart-container {
     height: 300px;
     padding: 20px 0;
 }
+/* .chart-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+} */
 
 .bars {
     height: 100%;
     display: flex;
     align-items: flex-end;
     justify-content: space-around;
+    gap: 20px;
+    align-items: flex-end;
 }
 
 .bar {
@@ -234,6 +258,9 @@ body {
     position: relative;
     height: var(--height);
     animation: grow 1s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
 }
 
 .bar span {
@@ -244,6 +271,20 @@ body {
     font-weight: 500;
     color: #2c3e50;
     white-space: nowrap;
+}
+
+.bar-names {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  margin-top: 10px;
+}
+
+.bar-names span {
+  font-size: 14px;
+  color: #666;
+  text-align: center;
+  width: 50px; /* Match bar width */
 }
 
 @keyframes grow {

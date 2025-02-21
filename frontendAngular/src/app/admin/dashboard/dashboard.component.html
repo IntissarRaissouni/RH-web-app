@@ -100,23 +100,27 @@
     </div>
 
     <!-- Graphique Comparatif -->
-    <div class="metric-card bar-chart">
-      <div class="metric-header">
-        <i class='bx bx-bar-chart-alt-2'></i>
-        <h3>Department Comparison</h3>
-      </div>
-      <div class="chart-container">
-        <div class="bars">
-          <div class="bar" style="--height: 70%"><span>70%</span></div>
-          <div class="bar" style="--height: 45%"><span>45%</span></div>
-          <div class="bar" style="--height: 60%"><span>60%</span></div>
-        </div>
-      </div>
+<div class="metric-card bar-chart">
+  <div class="metric-header">
+    <i class='bx bx-bar-chart-alt-2'></i>
+    <h3>Department Comparison</h3>
+  </div>
+  <div class="chart-container">
+    <div class="bars">
+      <div class="bar" style="--height: 70%" data-name="Sales"><span>70%</span></div>
+      <div class="bar" style="--height: 45%" data-name="Marketing"><span>45%</span></div>
+      <div class="bar" style="--height: 60%" data-name="Finance"><span>60%</span></div>
     </div>
+    <!-- Add a container for bar names -->
+    <div class="bar-names">
+      <span>Sales</span>
+      <span>Marketing</span>
+      <span>Finance</span>
+    </div>
+  </div>
+</div>
 
-    <!-- Ajoutez cette carte dans metrics-grid -->
-    <!-- HTML (update satisfaction card only) -->
-    <!-- HTML Update -->
+    <!-- Carte Statistiques Rapides -->
 <div class="metric-card satisfaction">
   <div class="metric-header">
     <i class='bx bx-user-check'></i>

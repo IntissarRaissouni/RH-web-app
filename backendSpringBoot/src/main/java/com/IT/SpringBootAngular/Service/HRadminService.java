@@ -27,6 +27,7 @@ public class HRadminService {
 
     public HRadmin getAdminById(String id){
         return hrAdminRepo.findById(id).orElse(null);
+
     }
     public String deleteAdmin(String id){
         HRadmin admin = hrAdminRepo.findById(id).orElse(null);
